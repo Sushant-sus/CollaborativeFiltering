@@ -1,0 +1,255 @@
+﻿@using OnlineShop.Models;
+@using X.PagedList.Mvc.Common
+@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<Products>
+@{
+    ViewData["Title"] = "Home Page";
+    //var id = ViewBag.producttypeId;
+    var data = ViewBag.producttypes as IEnumerable<ProductTypes>;
+    var recommendationdata = ViewBag.recommendationdata as IEnumerable<Products>;
+    var mostratedreview = ViewBag.mostratedreview as IEnumerable<Products>;
+    var userdata = ViewBag.userdata;
+}
+ 
+           
+<style>
+    .box-container {
+        text-align: center;
+        width: 100%;
+        border: 1px solid #999;
+        margin: 25px 0;
+        margin-top: 50px;
+        padding: 6px 15px 0;
+    }
+        .box-id
+
+    {
+        background-color: #eee;
+        display: block;
+        padding: 6px 15px;
+        margin-top: 10px;
+    }
+
+    .box-img {
+        margin-top: -35px;
+        position: relative;
+    }
+
+    .box-price {
+        display: inline-block;
+        background-color: #3498db;
+        border-radius: 0px;
+        padding: 4px 10px;
+        margin: 15px auto 0;
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .box-title {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .box-heading {
+        margin: 10px 0;
+    }
+
+    .btn {
+        font-size: 13px;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+
+    }
+</style>
+<br />
+<br />
+<div class="container">
+    <form method="get">
+        <div class="form-group row">
+
+            <div class="col-5">
+                <select name="ProductTypeId" class="form-control productqq">
+
+                    <option class="" value="">Select Product Types..</option>
+                    @foreach (var item in data)
+                    {
+                        if (@ViewBag.producttypeId == @item.Id)
+                        {
+                            <option selected value=@item.Id>@item.ProductType</option>
+
+                        }
+                        else
+                        {
+                            <option value="@item.Id">@item.ProductType</option>
+
+                        }
+                    }
+
+
+
+
+
+                </select>
+
+            </div>
+            <div class="col-5">
+                <input name="Query" placeholder="Search Product" value="@ViewBag.query" />
+
+            </div>
+            <button type="submit" class="fa fa-search"></button>
+        </div>
+    </form>
+    @if (Model.Any())
+    {
+        <h3 class="h3">shopping Items </h3>
+
+    }
+    else
+    {
+        <h3 class="h3">No Product Available </h3>
+
+    }
+    <div class="row">
+        @foreach (var product in Model)
+        {
+            <div class="col-sm-3">
+                <div class="box-container">
+                    <div class="box-img">
+                        <img src="@product.Image" style="height: 100px;" />
+                        <div class="box-price">Rs.@product.Price</div>
+                    </div>
+                    <h4 class="box-title">@product.Name</h4>
+                    @*<div class="box-heading text-uppercase">Category</div>*@
+                    <div class="box-btns">
+                        <a class="btn btn-primary text-uppercase" href="/Customer/Home/Detail/@product.Id">View</a>
+                    </div>
+                    <div class="box-id"></div>
+                </div>
+            </div>
+
+            @*  <div class="col-md-2 col-sm-6">
+        <div class="product-grid">
+        <div id="#redirectLink" class="product-image" data-link="/Customer/Home/Detail/@product.Id" >
+
+        <a href="#">
+        <img src="@product.Image" alt="Card Image" class="card-img-top" style="height: 100px;" />
+        </a>
+        @* <ul class="social">
+        <li><a asp-action="Detail" asp-controller="Home" asp-route-id="@product.Id" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+
+        </ul>
+        </div>
+
+        <div class="product-content">
+        <h3 class="title"><a href="#">@product.Name</a></h3>
+        <div class="price">@product.Price
+        @*Rs.@(product.Price-(product.Price * 20)/100)
+        @*<span class="text-danger">Rs.@product.Price</span>
+        </div>
+
+        </div>
+        </div>
+        </div>*@
+        }
+
+    </div>
+    @if (userdata != null)
+    {
+        @if (ViewBag.query == "")
+        {
+            @if (recommendationdata.Any())
+            {
+                <h3 class="h3">You May Like this </h3>
+
+                <div class="row">
+                    @foreach (var product in recommendationdata)
+                    {
+
+                        <div class="col-sm-3">
+                            <div class="box-container">
+                                <div class="box-img">
+                                    <img src="@product.Image" style="height: 100px;" />
+                                    <div class="box-price">Rs.@product.Price</div>
+                                </div>
+                                <h4 class="box-title">@product.Name</h4>
+                                @*<div class="box-heading text-uppercase">Category</div>*@
+                                <div class="box-btns">
+                                    <a class="btn btn-primary text-uppercase" href="/Customer/Home/Detail/@product.Id">View</a>
+                                </div>
+                                <div class="box-id"></div>
+                            </div>
+                        </div>
+                       
+                    }
+
+                </div>
+            }
+
+        }
+    } 
+</div>
+
+<style>
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .pagination-container {
+        background-color: #f2f2f2;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .pagination ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .pagination li {
+        margin: 0 5px;
+    }
+
+    .pagination a, .pagination span {
+        color: #333;
+        display: inline-block;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 3px;
+        transition: background-color 0.3s;
+    }
+
+        .pagination a:hover {
+            background-color: #ddd;
+        }
+
+    .pagination .active span {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+
+</style>
+
+<script>
+    document.querySelectorAll("[data-link]").forEach(el => {
+        el.addEventListener("click", () => window.location.href = el.dataset.link);
+    });
+</script>
+
+<div class="pagination">
+    @Html.PagedListPager(Model,c=>Href("~/Customer/Home/Index?page="+c),PagedListRenderOptionsBase.PageNumbersOnly)
+</div>
+
+ 

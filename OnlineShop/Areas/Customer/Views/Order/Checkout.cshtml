@@ -1,0 +1,168 @@
+﻿@model OnlineShop.Models.Order
+@using OnlineShop.Utility
+@using Microsoft.AspNetCore.Http
+@*@model List<Item>*@
+
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Order Details";
+}
+@*@{
+
+    List<Item> products = HttpContextAccessor.HttpContext.Session.Get<List<Products>>("products");
+   
+    if (products == null)
+    {
+        products=new List<Products>();
+    }
+
+}*@
+<br />
+
+<h2 class="text-info">Order Details</h2>
+<form asp-action="Checkout" asp-controller="Order" asp-area="Customer" method="post">
+    <div class="p-4 rounded border row">
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+
+        </div>
+        <input asp-for="TotalPrice" value="@ViewBag.Total" hidden />
+        <div class="col-6">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Name"></label>
+                </div>
+                <div class="col-8">
+                    <input type="hidden" asp-for="Id" />
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="PhoneNo"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="PhoneNo" class="form-control" />
+                    <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                </div>
+               
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Address"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Email"></label>
+                </div>
+                <div class="col-8">
+                    @*<select asp-for="ProductTypeId" asp-items="ViewBag.productTypeId" class="form-control"></select>*@
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+               
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="OrderDate"></label>
+                </div>
+                <div class="col-8">
+                    @*<select asp-for="SpecialTagId" asp-items="ViewBag.TagId" class="form-control"></select>*@
+                    <input asp-for="OrderDate" type="text" readonly="readonly" class="form-control" />
+                    <span asp-validation-for="OrderDate" class="text-danger"></span>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="col-6">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in @ViewBag.cart)
+                {
+                    <tr>
+                        <td>
+                            <img src="@item.Products.Image" height="100px" width="150px"/>
+                        </td>
+                        <td>@item.Products.Name</td>
+                        <td>@item.Products.Price</td>
+                        <td>@item.Quantity</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+            <div class="text-right">
+                <h3>Total Price : @ViewBag.Total</h3>
+            </div>
+            <div class="form-group text-right">
+                <input type="submit" value="Place Order" class="btn btn-success"/>
+            </div>
+        </div>
+       
+
+    </div>
+</form>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(document).ready(function() {
+            $("#OrderDate").datepicker({
+                showAnim: "slide",
+                changeMonth: true,
+                changeYear:true
+            });
+        });
+    </script>
+  
+}
+@*<div style="width:400px;margin:0 auto;">
+    <ejs-toast id="element">
+        <e-toast-position X="Right" Y="Bottom"></e-toast-position>
+    </ejs-toast>
+    <div class="row">
+        <ejs-button id="showToast" content="Show Types" cssClass="e-btn"></ejs-button>
+    </div>
+</div>
+<script type="text/javascript">
+    var toasts = [
+        { title: 'Warning !', content: 'There was a problem with your network connection.', cssClass: 'e-toast-warning' },
+        { title: 'Success !', content: 'Your message has been sent successfully.', cssClass: 'e-toast-success' },
+        { title: 'Error !', content: 'A problem has been occurred while submitting your data.', cssClass: 'e-toast-danger' },
+        { title: 'Information !', content: 'Please read the comments carefully.', cssClass: 'e-toast-info' }];
+    var toastFlag = 0;
+    setTimeout(
+        () => {
+            var toastObj = document.getElementById('element').ej2_instances[0];
+            toastObj.target = document.body;
+            toastObj.show(toasts[toastFlag]);
+            ++toastFlag;
+        }, 200);
+    document.getElementById("showToast").addEventListener('click', function () {
+        var toastObj = document.getElementById('element').ej2_instances[0];
+        toastObj.show(toasts[toastFlag]);
+        ++toastFlag;
+        if (toastFlag === (toasts.length)) {
+            toastFlag = 0;
+        }
+    });
+</script>
+
+*@

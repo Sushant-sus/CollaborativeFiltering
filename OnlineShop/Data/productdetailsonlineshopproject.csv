@@ -1,0 +1,34 @@
+ Id,Name,Price,Image,ProductColor,IsAvailable,ProductTypeId,SpecialTagId,Description,SecondaryImage1,SecondaryImage2,SecondaryImage3,IsActive,IsDeleted
+1,Samsung Galaxy M04 | 4GB RAM & 64 GB ROM | 5000 mAh Battery,15499,/Primary/Image1/0e5b05d175900c1773b08558c77748f8.jpg,white,1,1,1,NULL,NULL,NULL,NULL,1,0
+2, Samsung Galaxy M04 | 4GB RAM & 128 GB ROM | 5000 mAh Battery,17499,/Primary/Image1/9.jpg,red,1,1,1,NULL,NULL,NULL,NULL,1,0
+3,Samsung Galaxy A34 5G (8GB+128GB) || 6.6 inches Super,45999,/Primary/Image1/Sd506be8f3d9b4cd198fb9cbe8c9b09a96.jpg,red,1,1,1,NULL,NULL,NULL,NULL,1,0
+4,Samsung Galaxy A23 (6GB+128GB) II Quad Camera 50MP wide & 4K Video,27999,/Primary/Image1/e822dedbecc2227e4b95e1c5523d2e42.png,red,1,1,1,NULL,NULL,NULL,NULL,1,0
+5, Samsung Galaxy A33 5G (8GB+128GB) | Super AMOLED 90H,42999,/Primary/Image1/bfff53b812a54b2380240483dcb7ee34.png,black,1,1,1,NULL,NULL,NULL,NULL,1,0
+6,Samsung Galaxy A23 (4GB/64GB) 90Hz Display 50MP Camera,23999,/Primary/Image1/b704438ac0042d070f134bf1219d1413.png,purple,1,1,1,NULL,NULL,NULL,NULL,1,0
+7,"Samsung Galaxy A04 (3GB/32GB) | 50MP Camera | 6.5"" Display |",14999,/Primary/Image1/775338dac499b7da1c2a4f1ad3e11db9.jpg,Red,1,1,1,NULL,NULL,NULL,NULL,1,0
+8,Samsung Galaxy A04s (4GB+128GB) || Triple Camera 50 MP(wide),21999,/Primary/Image1/8516b408f15ce525f683ac5edaa8ee09.jpg,red,1,1,1,NULL,NULL,NULL,NULL,1,0
+9,"Samsung Galaxy A54 5G (8GB/128GB) | 6.4"" 120Hz Super",56999,/Primary/Image1/0e5b05d175900c1773b08558c77748f8.jpg,black,1,1,1,NULL,NULL,NULL,NULL,1,0
+10,"Samsung Galaxy A53 5G (8GB+128GB) II 6.5"" Super AMOLED",57499,/Primary/Image1/b704438ac0042d070f134bf1219d1413.png,red,1,1,1,NULL,NULL,NULL,NULL,1,0
+11,SAMSUNG A03S (3GB/32GB) (SM-A037F/DS) Li-Po-5000 mAh BATTERY,15999,/Primary/Image1/22.jpg,purple,1,1,1,NULL,NULL,NULL,NULL,1,0
+12,Samsung Galaxy M62 Mobile Phone ( 6GB/128GB ) ( SM-M625F/DS ),37999,/Primary/Image1/18.jpg,black,1,1,1,NULL,NULL,NULL,NULL,1,0
+13,Samsung Galaxy A73 5G (8GB/256GB) 108MP Camera Super-,75999,/Primary/Image1/13.jpg,white,1,1,1,NULL,NULL,NULL,NULL,1,0
+14,Samsung Galaxy A54 5G (8GB+256GB) || Octa-Core (4x2.4 GH,59999,/Primary/Image1/14.png,purple,1,1,1,NULL,NULL,NULL,NULL,1,0
+15,"Samsung Galaxy A04e (3GB/32GB) 6.5"" Display Android 12 5000mAh",13499,/Primary/Image1/15.jpg,black,1,1,1,NULL,NULL,NULL,NULL,1,0
+16, Samsung Galaxy A04S (4GB / 128GB) 50MP Camera Exynos 850 Android,20999,/Primary/Image1/16.jpg,white,1,1,1,NULL,NULL,NULL,NULL,1,0
+17,"Samsung Galaxy A54 5G (8GB+128GB) || 6.4"" Super AMOLED",56999,/Primary/Image1/17.png,Red,1,1,1,NULL,NULL,NULL,NULL,1,0
+18,Samsung Galaxy A23 (6GB/128GB) 90Hz Display 50MP Camera,27999,/Primary/Image1/18.jpg,purple,1,1,1,NULL,NULL,NULL,NULL,1,0
+19,Samsung Galaxy M52 5G (8GB+128Gb) | Snapdragon 778G 5G ,45999,/Primary/Image1/19.jpg,Red,1,1,1,NULL,NULL,NULL,NULL,1,0
+20,"Samsung Galaxy A34 5G (8GB/128GB) | 6.6"" 120Hz Super",45999,/Primary/Image1/20.jpg,sky,1,1,1,NULL,NULL,NULL,NULL,1,0
+21,Samsung Galaxy A73 5G,74000,/Primary/Image1/21.jpg,white,1,1,1,NULL,NULL,NULL,NULL,1,0
+22,Samsung Galaxy A14 5G (6GB+128GB) || Android 13 One UI 5 ||,27999,/Primary/Image1/24.png,white,1,1,1,NULL,NULL,NULL,NULL,1,0
+23,Samsung Galaxy A03 Core Mobile Phone (2GB/32GB) II Battery Li-Ion,12499,/Primary/Image1/23.png,Red,1,1,1,NULL,NULL,NULL,NULL,1,0
+24,Samsung Galaxy A14 5G (8GB+128GB) || 13MP Selfie &,29999,/Primary/Image1/24.png,black,1,1,1,NULL,NULL,NULL,NULL,1,0
+25,Samsung Galaxy A14 LTE (4GB+64GB) || Triple Camera,20899,/Primary/Image1/25.png,purple,1,1,1,NULL,NULL,NULL,NULL,1,0
+26,"SAMSUNG A04e (3GB+32GB) || Dual Camera 13MP/2MP Ram Plus || Fac",13499,/Primary/Image1/26.jpg,red,1,1,1,NULL,NULL,NULL,NULL,1,0
+27,Samsung Galaxy A23 Mobile Phone (4GB+64GB) II Battery 5000 mAh II,20000,/Primary/Image1/27.png,black,1,1,1,NULL,NULL,NULL,NULL,1,0
+28,"Samsung Galaxy A04 (4GB+64GB) II 6.5"" PLS LCD || Dual Camera",16999,/Primary/Image1/28.png,white,1,1,1,NULL,NULL,NULL,NULL,1,0
+29,Samsung Galaxy A04s (4GB+64GB) || Battery Li-Po 5000 mAh || Triple,19999,/Primary/Image1/29.png,purple,1,1,1,NULL,NULL,NULL,NULL,1,0
+30,Samsung Galaxy A04s (4GB+128GB) Triple Camera 50 MP(wide),20700,/Primary/Image1/30.png,sky,1,1,1,NULL,NULL,NULL,NULL,1,0
+31,Samsung A04e (3GB RAM / 32GB ROM) | 13MP Dual Camera | 6.5” PLS,13499,/Primary/Image1/31.jpg,purple,1,1,1,NULL,NULL,NULL,NULL,1,0
+32,"Samsung A04e (3GB+32GB) Dual Camera 13MP + 2MP Battery Li-Po",13290,/Primary/Image1/32.png,Red,1,1,1,NULL,NULL,NULL,NULL,1,0
+33,Samsung Galaxy A73 5G (8GB+256GB) II Super AMOLED+ 120Hz Refresh Rate 108 MP Camera | 1 Year Breakage Insurance Samsung Galaxy A73 5G (8GB+256GB) II Super AMOLED+,75999,/Primary/Image1/34.jpg,purple,1,1,1,NULL,NULL,NULL,NULL,1,0

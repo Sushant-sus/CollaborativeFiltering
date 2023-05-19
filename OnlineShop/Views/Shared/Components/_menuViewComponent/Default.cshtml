@@ -1,0 +1,52 @@
+﻿@using System.Net.Http
+@using OnlineShop.Helpers
+@using OnlineShop.Utility
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{var userRole = HttpContextAccessor.HttpContext.Session.GetString("roleName");}
+<div class="container">
+					<ul class="header-links pull-left">
+
+
+						 @if (userRole == "Super User")
+                        {
+                            <li>
+                                <a   asp-area="Admin" asp-controller="ProductTypes" asp-action="Index">Product Type</a>
+
+                            </li>
+                            <li>
+                                <a   asp-area="Admin" asp-controller="SpecialTag" asp-action="Index">Brand Name</a>
+                            </li>
+                            <li>
+                                <a  asp-area="Admin" asp-controller="Product" asp-action="Index">Product</a>
+                            </li>
+                              <li>
+                                <a   asp-area="Admin" asp-controller="Role" asp-action="Index">Role</a>
+                            </li>
+                        }
+                         @if (userRole == "Admin")
+                        {
+                            <li>
+                                <a   asp-area="Admin" asp-controller="ProductTypes" asp-action="Index">Product Type</a>
+
+                            </li>
+                            <li>
+                                <a   asp-area="Admin" asp-controller="SpecialTag" asp-action="Index">Brand Name</a>
+                            </li>
+                            <li>
+                                <a asp-area="Admin" asp-controller="Product" asp-action="Index">Product</a>
+                            </li>
+                        }
+
+
+
+						<@*li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
+						<li><a asp-area="Admin" asp-controller="ProductTypes" asp-action="Index">Product Type</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>*@
+					</ul>
+					<ul class="header-links pull-right">
+						<li><a href="/account/register"><i class="fa fa-user-plus"></i> Register</a></li>
+						<li><a href="/account/login"><i class="fa fa-sign-in"></i> Login</a></li>
+					</ul>
+				</div>

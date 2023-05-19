@@ -1,0 +1,206 @@
+﻿@model OnlineShop.Models.Products
+@{
+    ViewData["Title"] = "Create";
+}
+<br />
+
+<h2 class="text-info">Add New Product</h2>
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="p-4 rounded border">
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+
+        </div>
+        <h3>@ViewBag.message</h3>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Name"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Name" type="text" class="form-control" />
+            </div>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Price"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Price" type="number" class="form-control" />
+            </div>
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="primaryimagefile"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="primaryimagefile" class="form-control" type="file" />
+            </div>
+            <span asp-validation-for="primaryimagefile" class="text-danger"></span>
+             <div class="col-sm-4 form-group">
+
+                 <div class="col-3"> 
+                            <label class="control-label">Preview</label> 
+             </div>
+                           <img id="imagePreview" src="#" style="width:200px"/>
+                        </div> 
+        </div> 
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="secondaryimage1file"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="secondaryimage1file" class="form-control" type="file" />
+            </div>
+            <span asp-validation-for="secondaryimage1file" class="text-danger"></span>
+             <div class="col-sm-4 form-group">
+
+                 <div class="col-3"> 
+                            <label class="control-label">Preview</label> 
+             </div>
+                           <img id="secondaryimage1" src="#" style="width:200px"/>
+                        </div> 
+        </div> 
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="secondaryimage2file"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="secondaryimage2file" class="form-control" type="file" />
+            </div>
+            <span asp-validation-for="secondaryimage2file" class="text-danger"></span>
+             <div class="col-sm-4 form-group">
+
+                 <div class="col-3"> 
+                            <label class="control-label">Preview</label> 
+             </div>
+                           <img id="secondaryimage2" src="#" style="width:200px"/>
+                        </div> 
+        </div> 
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="secondaryimage3file"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="secondaryimage3file" class="form-control" type="file" />
+            </div>
+            <span asp-validation-for="secondaryimage3file" class="text-danger"></span>
+             <div class="col-sm-4 form-group">
+
+                 <div class="col-3"> 
+                            <label class="control-label">Preview</label> 
+             </div>
+                           <img id="secondaryimage3" src="#" style="width:200px"/>
+                        </div> 
+        </div> 
+                       
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="ProductColor"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="ProductColor" class="form-control" />
+            </div>
+            <span asp-validation-for="ProductColor" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="ProductTypeId"></label>
+            </div>
+            <div class="col-5">
+                <select asp-for="ProductTypeId" class="form-control">
+                      
+                            <option class="" value="0">Select..</option>
+                    @foreach(var item in (IEnumerable<ProductTypes>)ViewBag.productTypeId)
+                    { 
+                    <option value="@item.Id">
+                        @item.ProductType
+                       
+</option>
+    }
+                </select>
+                @*<input asp-for="ProductTypeId" class="form-control"/>*@
+            </div>
+            <span asp-validation-for="ProductTypeId" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label>Brand</label>
+            </div>
+            <div class="col-5">
+                 <select asp-for="SpecialTagId" class="form-control">
+                     
+                            <option class="" value="0">Select..</option>
+                    @foreach(var item in (IEnumerable<SpecialTag>)ViewBag.TagId)
+                    { 
+                    <option value="@item.Id">
+                        @item.Name
+                       
+</option>
+    }
+                </select>
+                @*<input asp-for="SpecialTagId" class="form-control" />*@
+            </div>
+            <span asp-validation-for="SpecialTagId" class="text-danger"></span>
+        </div>
+          <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Description"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Description" type="text" class="form-control" />
+            </div>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="IsAvailable"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="IsAvailable" class="" type="checkbox"/>
+            </div>
+            <span asp-validation-for="IsAvailable" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Save" />
+            <a asp-action="Index" class="btn btn-success">Back to List</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script>
+    $("#primaryimagefile").attr("required", true);
+debugger;
+var abc = document.querySelector("#primaryimagefile");
+ abc.onchange = evt => {
+            const [file] = abc.files
+            if (file) {
+                imagePreview.src = URL.createObjectURL(file);
+            }
+        }
+var abc1 = document.querySelector("#secondaryimage1file");
+ abc1.onchange = evt => {
+            const [file] = abc1.files
+            if (file) {
+                secondaryimage1.src = URL.createObjectURL(file);
+            }
+        }
+var abc2 = document.querySelector("#secondaryimage2file");
+ abc2.onchange = evt => {
+            const [file] = abc2.files
+            if (file) {
+                secondaryimage2.src = URL.createObjectURL(file);
+            }
+        }
+var abc3 = document.querySelector("#secondaryimage3file");
+ abc3.onchange = evt => {
+            const [file] = abc3.files
+            if (file) {
+                secondaryimage3.src = URL.createObjectURL(file);
+            }
+        }
+</script>
+}
+

@@ -1,0 +1,136 @@
+﻿@using OnlineShop.Models
+@model List<Item>
+@{
+    ViewData["Title"] = "Cart";
+    var data = ViewBag.cart;
+}
+ @if (data == null)
+        {
+<h4>Your Cart</h4>
+
+<br/>
+    <form method="get" asp-area="Customer"  asp-action="Checkout" asp-controller="Order"> 
+
+<div class="row">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Product Type</th>
+            <th>Quantity</th>
+            <th>Color</th>
+            <th></th>
+        </tr>
+        </thead>
+        
+         
+    </table>
+</div>
+<div class="row">
+    <div class="col-6">
+        <a asp-action="Index" asp-controller="Home" class="btn btn-success">Back to Home</a>
+    </div>
+        <p class="text-dark">Grant Total : @ViewBag.total </p>
+
+         <div class="col-6 text-right">
+        @*<p class="text-dark">Total Amount</p>*@
+        <input class="text-dark" name="Total" value="@ViewBag.total" hidden /> 
+        <button type="submit"  class="btn btn-info">Process to Checkout</button>
+    </div>
+   
+</div>
+    </form>
+
+        }
+else
+{
+    
+<h4>Your Cart</h4>
+
+<br/>
+<div class="row">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Product Type</th>
+            <th>Quantity</th>
+            <th>Color</th>
+            <th></th>
+        </tr>
+        </thead>
+        
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@item.Products.Image" width="200px" height="150px"/>
+                </td>
+                <td>@item.Products.Name</td>
+                <td>@item.Products.Price</td>
+                <td>@item.Products.ProductTypes.ProductType</td>
+                <td>
+                    <a href="/cart/decrease/@item.Products.Id" class="fas fa-minus"></a>
+                    @item.Quantity
+                    <a href="/cart/addquantity/@item.Products.Id" class="fas fa-plus"></a>
+                </td>
+                <td>@item.Products.ProductColor</td>
+                <td>
+                    <a asp-area="Customer" asp-action="Remove" asp-controller="Cart" asp-route-id="@item.Products.Id" class="btn btn-danger">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+
+        
+
+
+        </tbody>
+    </table>
+</div>
+    <form method="get" asp-area="Customer"  asp-action="Checkout" asp-controller="Order"> 
+
+<div class="row">
+    <div class="col-6">
+        <a asp-action="Index" asp-controller="Home" class="btn btn-success">Back to Home</a>
+        </div>
+       
+
+         <div class="col-3 text-right">
+        <p class="text-dark">Grant Total : @ViewBag.total </p>
+        </div>
+        <input class="text-dark" name="Total" value="@ViewBag.total" hidden /> 
+        <button type="submit"  class="btn btn-info">Process to Checkout</button>
+   
+</div>
+    </form>
+
+
+}
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

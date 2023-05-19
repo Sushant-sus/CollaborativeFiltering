@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <UserSecretsId>aspnet-OnlineShop-45427504-1FEF-479E-BE33-BDBEE276A95A</UserSecretsId>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <ApplicationIcon />
+
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Images\noimage.PNG" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="AlertifyJS" Version="1.11.2" />
+    <PackageReference Include="CsvHelper" Version="30.0.1" />
+    <PackageReference Include="Dapper.SimpleCRUD" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.ML" Version="0.7.0" />
+    <PackageReference Include="Microsoft.ML.MatrixFactorization" Version="0.7.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
+    <PackageReference Include="NToastNotify" Version="8.0.0" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="7.6.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\noimage.PNG" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
+    <Folder Include="NewFolder2\" />
+    <Folder Include="NewFolder3\" />
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
+</Project>

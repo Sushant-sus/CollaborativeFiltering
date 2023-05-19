@@ -1,0 +1,553 @@
+USE [ProjectDatabase]
+GO
+/****** Object:  Table [dbo].[__EFMigrationsHistory]    Script Date: 2/18/2023 8:01:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[__EFMigrationsHistory](
+	[MigrationId] [nvarchar](150) NOT NULL,
+	[ProductVersion] [nvarchar](32) NOT NULL,
+ CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY CLUSTERED 
+(
+	[MigrationId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AspNetRoleClaims]    Script Date: 2/18/2023 8:01:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AspNetRoleClaims](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[RoleId] [nvarchar](450) NOT NULL,
+	[ClaimType] [nvarchar](max) NULL,
+	[ClaimValue] [nvarchar](max) NULL,
+ CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AspNetRoles]    Script Date: 2/18/2023 8:01:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AspNetRoles](
+	[Id] [nvarchar](450) NOT NULL,
+	[Name] [nvarchar](256) NULL,
+	[NormalizedName] [nvarchar](256) NULL,
+	[ConcurrencyStamp] [nvarchar](max) NULL,
+ CONSTRAINT [PK_AspNetRoles] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AspNetUserClaims]    Script Date: 2/18/2023 8:01:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AspNetUserClaims](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [nvarchar](450) NOT NULL,
+	[ClaimType] [nvarchar](max) NULL,
+	[ClaimValue] [nvarchar](max) NULL,
+ CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AspNetUserLogins]    Script Date: 2/18/2023 8:01:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AspNetUserLogins](
+	[LoginProvider] [nvarchar](128) NOT NULL,
+	[ProviderKey] [nvarchar](128) NOT NULL,
+	[ProviderDisplayName] [nvarchar](max) NULL,
+	[UserId] [nvarchar](450) NOT NULL,
+ CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY CLUSTERED 
+(
+	[LoginProvider] ASC,
+	[ProviderKey] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AspNetUserRoles]    Script Date: 2/18/2023 8:01:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AspNetUserRoles](
+	[UserId] [nvarchar](450) NOT NULL,
+	[RoleId] [nvarchar](450) NOT NULL,
+ CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC,
+	[RoleId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AspNetUsers]    Script Date: 2/18/2023 8:01:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AspNetUsers](
+	[Id] [nvarchar](450) NOT NULL,
+	[UserName] [nvarchar](256) NULL,
+	[NormalizedUserName] [nvarchar](256) NULL,
+	[Email] [nvarchar](256) NULL,
+	[NormalizedEmail] [nvarchar](256) NULL,
+	[EmailConfirmed] [bit] NOT NULL,
+	[PasswordHash] [nvarchar](max) NULL,
+	[SecurityStamp] [nvarchar](max) NULL,
+	[ConcurrencyStamp] [nvarchar](max) NULL,
+	[PhoneNumber] [nvarchar](max) NULL,
+	[PhoneNumberConfirmed] [bit] NOT NULL,
+	[TwoFactorEnabled] [bit] NOT NULL,
+	[LockoutEnd] [datetimeoffset](7) NULL,
+	[LockoutEnabled] [bit] NOT NULL,
+	[AccessFailedCount] [int] NOT NULL,
+	[Discriminator] [nvarchar](max) NOT NULL,
+	[FirstName] [nvarchar](max) NULL,
+	[LastName] [nvarchar](max) NULL,
+ CONSTRAINT [PK_AspNetUsers] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AspNetUserTokens]    Script Date: 2/18/2023 8:01:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AspNetUserTokens](
+	[UserId] [nvarchar](450) NOT NULL,
+	[LoginProvider] [nvarchar](450) NOT NULL,
+	[Name] [nvarchar](450) NOT NULL,
+	[Value] [nvarchar](max) NULL,
+ CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC,
+	[LoginProvider] ASC,
+	[Name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[OrderDetails]    Script Date: 2/18/2023 8:01:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[OrderDetails](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[OrderId] [int] NOT NULL,
+	[PorductId] [int] NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[TransactionDate] [datetime2](7) NOT NULL,
+	[UserId] [nvarchar](max) NULL,
+ CONSTRAINT [PK_OrderDetails] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Orders]    Script Date: 2/18/2023 8:01:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Orders](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[OrderNo] [nvarchar](max) NULL,
+	[Name] [nvarchar](max) NOT NULL,
+	[PhoneNo] [nvarchar](max) NOT NULL,
+	[Email] [nvarchar](max) NOT NULL,
+	[Address] [nvarchar](max) NOT NULL,
+	[OrderDate] [datetime2](7) NOT NULL,
+	[TotalPrice] [nvarchar](max) NOT NULL,
+	[UserId] [nvarchar](max) NULL,
+ CONSTRAINT [PK_Orders] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Products]    Script Date: 2/18/2023 8:01:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Products](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](max) NOT NULL,
+	[Price] [decimal](18, 2) NOT NULL,
+	[Image] [nvarchar](max) NULL,
+	[ProductColor] [nvarchar](max) NULL,
+	[IsAvailable] [bit] NOT NULL,
+	[ProductTypeId] [int] NOT NULL,
+	[SpecialTagId] [int] NOT NULL,
+	[Description] [nvarchar](max) NULL,
+	[SecondaryImage1] [nvarchar](max) NULL,
+	[SecondaryImage2] [nvarchar](max) NULL,
+	[SecondaryImage3] [nvarchar](max) NULL,
+	[IsActive] [bit] NOT NULL,
+	[IsDeleted] [bit] NOT NULL,
+ CONSTRAINT [PK_Products] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ProductTypes]    Script Date: 2/18/2023 8:01:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ProductTypes](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ProductType] [nvarchar](max) NOT NULL,
+	[IsActive] [bit] NOT NULL,
+	[IsDeleted] [bit] NOT NULL,
+ CONSTRAINT [PK_ProductTypes] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Review]    Script Date: 2/18/2023 8:01:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Review](
+	[ReviewId] [int] IDENTITY(1,1) NOT NULL,
+	[Rating] [decimal](18, 2) NOT NULL,
+	[Message] [nvarchar](max) NULL,
+	[UserId] [nvarchar](max) NULL,
+	[SalesId] [int] NOT NULL,
+	[ProductId] [int] NOT NULL,
+	[IsApproved] [bit] NOT NULL,
+	[IsActive] [bit] NOT NULL,
+	[AddedBy] [int] NOT NULL,
+	[AddedOn] [datetime2](7) NOT NULL,
+	[UpDatedBy] [int] NOT NULL,
+	[UpdatedOn] [datetime2](7) NOT NULL,
+	[IsDeleted] [bit] NOT NULL,
+	[DeletedOn] [datetime2](7) NOT NULL,
+	[DeletedBy] [int] NOT NULL,
+ CONSTRAINT [PK_Review] PRIMARY KEY CLUSTERED 
+(
+	[ReviewId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SearchLog]    Script Date: 2/18/2023 8:01:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SearchLog](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Keyword] [nvarchar](max) NOT NULL,
+	[UserId] [nvarchar](max) NULL,
+	[ProductId] [int] NULL,
+	[AddedOn] [datetime] NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SpecialTags]    Script Date: 2/18/2023 8:01:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SpecialTags](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](max) NOT NULL,
+	[IsActive] [bit] NOT NULL,
+	[IsDeleted] [bit] NOT NULL,
+ CONSTRAINT [PK_SpecialTags] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+INSERT [dbo].[__EFMigrationsHistory] ([MigrationId], [ProductVersion]) VALUES (N'00000000000000_CreateIdentitySchema', N'2.2.0-rtm-35687')
+GO
+INSERT [dbo].[__EFMigrationsHistory] ([MigrationId], [ProductVersion]) VALUES (N'20190228123654_addProductTableIntoDatabase', N'2.2.0-rtm-35687')
+GO
+INSERT [dbo].[__EFMigrationsHistory] ([MigrationId], [ProductVersion]) VALUES (N'20190312141414_specialtagsmodeladd', N'2.2.0-rtm-35687')
+GO
+INSERT [dbo].[__EFMigrationsHistory] ([MigrationId], [ProductVersion]) VALUES (N'20190317115746_addproductmodel', N'2.2.0-rtm-35687')
+GO
+INSERT [dbo].[__EFMigrationsHistory] ([MigrationId], [ProductVersion]) VALUES (N'20190514195844_addedOrderandOrderDetailstable', N'2.2.0-rtm-35687')
+GO
+INSERT [dbo].[__EFMigrationsHistory] ([MigrationId], [ProductVersion]) VALUES (N'20190907182726_addednewfeildintousertable', N'2.2.0-rtm-35687')
+GO
+INSERT [dbo].[__EFMigrationsHistory] ([MigrationId], [ProductVersion]) VALUES (N'20221021040103_abc', N'2.2.0-rtm-35687')
+GO
+INSERT [dbo].[__EFMigrationsHistory] ([MigrationId], [ProductVersion]) VALUES (N'20230216093741_orderdetails', N'2.2.0-rtm-35687')
+GO
+INSERT [dbo].[AspNetRoles] ([Id], [Name], [NormalizedName], [ConcurrencyStamp]) VALUES (N'1', N'User', N'User', N'User')
+GO
+INSERT [dbo].[AspNetRoles] ([Id], [Name], [NormalizedName], [ConcurrencyStamp]) VALUES (N'2', N'Super User', N'Super User', N'Super User')
+GO
+INSERT [dbo].[AspNetRoles] ([Id], [Name], [NormalizedName], [ConcurrencyStamp]) VALUES (N'3', N'Admin', N'Admin', N'Admin')
+GO
+INSERT [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'a848be29-985d-44c8-847e-40b2752fb766', N'2')
+GO
+INSERT [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'ee23657b-6e63-4675-8375-1ac8ee023c06', N'1')
+GO
+INSERT [dbo].[AspNetUsers] ([Id], [UserName], [NormalizedUserName], [Email], [NormalizedEmail], [EmailConfirmed], [PasswordHash], [SecurityStamp], [ConcurrencyStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnd], [LockoutEnabled], [AccessFailedCount], [Discriminator], [FirstName], [LastName]) VALUES (N'a848be29-985d-44c8-847e-40b2752fb766', N'Bishal@gmail.com', N'BISHAL@GMAIL.COM', N'Bishal@gmail.com', N'BISHAL@GMAIL.COM', 0, N'AQAAAAEAACcQAAAAEK/nlQLpnCSeJBjRDQFkTgeaXFpLbYpRsIAx4d9ez+zLEgUMHqvD7tPVOF3Ostrcdg==', N'6YJ7NO6I4BXZIA67WFQS4VA6YWFG5FU7', N'59d84046-246e-49d8-bd5d-335343ed09ef', N'+1 (985) 375-1982', 0, 0, NULL, 1, 0, N'ApplicationUser', N'Ashely', N'Crawford')
+GO
+INSERT [dbo].[AspNetUsers] ([Id], [UserName], [NormalizedUserName], [Email], [NormalizedEmail], [EmailConfirmed], [PasswordHash], [SecurityStamp], [ConcurrencyStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnd], [LockoutEnabled], [AccessFailedCount], [Discriminator], [FirstName], [LastName]) VALUES (N'ee23657b-6e63-4675-8375-1ac8ee023c06', N'bb@gmail.com', N'BB@GMAIL.COM', N'bb@gmail.com', N'BB@GMAIL.COM', 0, N'AQAAAAEAACcQAAAAEBBSoi4oGRnfhCJULOYDOJhTLDT8Cd3zqGCEqyhCZPrNlYhe/93N+etdbmv/ar/Fsg==', N'DBL4AYPI2SXY3XMZBEZVRDDCIL2EMIS7', N'fb4df230-1a8b-4933-be34-0fb3eeb127fc', N'+1 (999) 221-5066', 0, 0, NULL, 1, 0, N'ApplicationUser', N'Fallon', N'Navarro')
+GO
+SET IDENTITY_INSERT [dbo].[OrderDetails] ON 
+GO
+INSERT [dbo].[OrderDetails] ([Id], [OrderId], [PorductId], [Quantity], [TransactionDate], [UserId]) VALUES (1, 1, 1, 1, CAST(N'2023-02-16T21:02:50.0423214' AS DateTime2), N'a848be29-985d-44c8-847e-40b2752fb766')
+GO
+INSERT [dbo].[OrderDetails] ([Id], [OrderId], [PorductId], [Quantity], [TransactionDate], [UserId]) VALUES (2, 2, 1, 1, CAST(N'2023-02-16T21:08:01.3588584' AS DateTime2), N'a848be29-985d-44c8-847e-40b2752fb766')
+GO
+INSERT [dbo].[OrderDetails] ([Id], [OrderId], [PorductId], [Quantity], [TransactionDate], [UserId]) VALUES (3, 3, 2, 1, CAST(N'2023-02-16T21:08:20.6215770' AS DateTime2), N'a848be29-985d-44c8-847e-40b2752fb766')
+GO
+INSERT [dbo].[OrderDetails] ([Id], [OrderId], [PorductId], [Quantity], [TransactionDate], [UserId]) VALUES (4, 4, 3, 1, CAST(N'2023-02-18T16:00:58.8355389' AS DateTime2), N'a848be29-985d-44c8-847e-40b2752fb766')
+GO
+INSERT [dbo].[OrderDetails] ([Id], [OrderId], [PorductId], [Quantity], [TransactionDate], [UserId]) VALUES (5, 5, 1, 1, CAST(N'2023-02-18T17:54:59.4272226' AS DateTime2), N'a848be29-985d-44c8-847e-40b2752fb766')
+GO
+SET IDENTITY_INSERT [dbo].[OrderDetails] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Orders] ON 
+GO
+INSERT [dbo].[Orders] ([Id], [OrderNo], [Name], [PhoneNo], [Email], [Address], [OrderDate], [TotalPrice], [UserId]) VALUES (1, N'001', N'Bishal Gautam', N'9861511149', N'gautambishal202@gmail.com', N'maitidevi', CAST(N'2023-02-16T21:02:50.0424785' AS DateTime2), N'1777.60', N'a848be29-985d-44c8-847e-40b2752fb766')
+GO
+INSERT [dbo].[Orders] ([Id], [OrderNo], [Name], [PhoneNo], [Email], [Address], [OrderDate], [TotalPrice], [UserId]) VALUES (2, N'002', N'Bishal Gautam', N'9861511149', N'gautambishal202@gmail.com', N'maitidevi', CAST(N'2023-02-16T21:08:01.3588642' AS DateTime2), N'1777.60', N'a848be29-985d-44c8-847e-40b2752fb766')
+GO
+INSERT [dbo].[Orders] ([Id], [OrderNo], [Name], [PhoneNo], [Email], [Address], [OrderDate], [TotalPrice], [UserId]) VALUES (3, N'003', N'Bishal Gautam', N'9861511149', N'gautambishal202@gmail.com', N'maitidevi', CAST(N'2023-02-16T21:08:20.6215806' AS DateTime2), N'266.40', N'a848be29-985d-44c8-847e-40b2752fb766')
+GO
+INSERT [dbo].[Orders] ([Id], [OrderNo], [Name], [PhoneNo], [Email], [Address], [OrderDate], [TotalPrice], [UserId]) VALUES (4, N'004', N'Bishal Gautam', N'9861511149', N'gautambishal202@gmail.com', N'maitidevi', CAST(N'2023-02-18T16:00:58.8357127' AS DateTime2), N'35.20', N'a848be29-985d-44c8-847e-40b2752fb766')
+GO
+INSERT [dbo].[Orders] ([Id], [OrderNo], [Name], [PhoneNo], [Email], [Address], [OrderDate], [TotalPrice], [UserId]) VALUES (5, N'005', N'Bishal Gautam', N'9861511149', N'gautambishal202@gmail.com', N'maitidevi', CAST(N'2023-02-18T17:54:59.4273960' AS DateTime2), N'1777.60', N'a848be29-985d-44c8-847e-40b2752fb766')
+GO
+SET IDENTITY_INSERT [dbo].[Orders] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Products] ON 
+GO
+INSERT [dbo].[Products] ([Id], [Name], [Price], [Image], [ProductColor], [IsAvailable], [ProductTypeId], [SpecialTagId], [Description], [SecondaryImage1], [SecondaryImage2], [SecondaryImage3], [IsActive], [IsDeleted]) VALUES (1, N'e', CAST(2222.00 AS Decimal(18, 2)), N'/Primary/Image1/Screenshot (6).png', N'2', 1, 1, 1, N'2', NULL, NULL, NULL, 1, 0)
+GO
+INSERT [dbo].[Products] ([Id], [Name], [Price], [Image], [ProductColor], [IsAvailable], [ProductTypeId], [SpecialTagId], [Description], [SecondaryImage1], [SecondaryImage2], [SecondaryImage3], [IsActive], [IsDeleted]) VALUES (2, N'Tshirt', CAST(333.00 AS Decimal(18, 2)), N'/Primary/Image1/Screenshot (6).png', N'red', 1, 1, 1, N'this is ', NULL, NULL, NULL, 1, 0)
+GO
+INSERT [dbo].[Products] ([Id], [Name], [Price], [Image], [ProductColor], [IsAvailable], [ProductTypeId], [SpecialTagId], [Description], [SecondaryImage1], [SecondaryImage2], [SecondaryImage3], [IsActive], [IsDeleted]) VALUES (3, N'pant', CAST(44.00 AS Decimal(18, 2)), N'/Primary/Image1/Screenshot (2).png', N'4', 1, 1, 2, N'2', NULL, NULL, NULL, 1, 0)
+GO
+INSERT [dbo].[Products] ([Id], [Name], [Price], [Image], [ProductColor], [IsAvailable], [ProductTypeId], [SpecialTagId], [Description], [SecondaryImage1], [SecondaryImage2], [SecondaryImage3], [IsActive], [IsDeleted]) VALUES (4, N'lenga 12323', CAST(2000.00 AS Decimal(18, 2)), N'/Primary/Image1/Screenshot (7).png', N'red', 1, 1, 1, N'this is ', NULL, NULL, NULL, 1, 0)
+GO
+INSERT [dbo].[Products] ([Id], [Name], [Price], [Image], [ProductColor], [IsAvailable], [ProductTypeId], [SpecialTagId], [Description], [SecondaryImage1], [SecondaryImage2], [SecondaryImage3], [IsActive], [IsDeleted]) VALUES (5, N'Saadi', CAST(222.00 AS Decimal(18, 2)), N'/Primary/Image1/Screenshot (6).png', N'red', 1, 1, 2, N'this is ', NULL, NULL, NULL, 1, 0)
+GO
+INSERT [dbo].[Products] ([Id], [Name], [Price], [Image], [ProductColor], [IsAvailable], [ProductTypeId], [SpecialTagId], [Description], [SecondaryImage1], [SecondaryImage2], [SecondaryImage3], [IsActive], [IsDeleted]) VALUES (6, N'lebanti', CAST(4444.00 AS Decimal(18, 2)), N'/Primary/Image1/Screenshot (4).png', N'red', 1, 1, 2, N'2', NULL, NULL, NULL, 1, 0)
+GO
+INSERT [dbo].[Products] ([Id], [Name], [Price], [Image], [ProductColor], [IsAvailable], [ProductTypeId], [SpecialTagId], [Description], [SecondaryImage1], [SecondaryImage2], [SecondaryImage3], [IsActive], [IsDeleted]) VALUES (7, N'kaiyo', CAST(333.00 AS Decimal(18, 2)), N'/Primary/Image1/Screenshot (3).png', N'33', 1, 1, 2, N'2', NULL, NULL, NULL, 1, 0)
+GO
+INSERT [dbo].[Products] ([Id], [Name], [Price], [Image], [ProductColor], [IsAvailable], [ProductTypeId], [SpecialTagId], [Description], [SecondaryImage1], [SecondaryImage2], [SecondaryImage3], [IsActive], [IsDeleted]) VALUES (8, N'jutta', CAST(333.00 AS Decimal(18, 2)), N'/Primary/Image1/Screenshot (6).png', N'3', 1, 1, 1, N'3', NULL, NULL, NULL, 1, 0)
+GO
+SET IDENTITY_INSERT [dbo].[Products] OFF
+GO
+SET IDENTITY_INSERT [dbo].[ProductTypes] ON 
+GO
+INSERT [dbo].[ProductTypes] ([Id], [ProductType], [IsActive], [IsDeleted]) VALUES (1, N'd', 1, 0)
+GO
+SET IDENTITY_INSERT [dbo].[ProductTypes] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Review] ON 
+GO
+INSERT [dbo].[Review] ([ReviewId], [Rating], [Message], [UserId], [SalesId], [ProductId], [IsApproved], [IsActive], [AddedBy], [AddedOn], [UpDatedBy], [UpdatedOn], [IsDeleted], [DeletedOn], [DeletedBy]) VALUES (1, CAST(4.00 AS Decimal(18, 2)), N'eee', N'Bishal@gmail.com', 1, 1, 0, 1, 0, CAST(N'2023-02-16T21:03:19.9966667' AS DateTime2), 0, CAST(N'2023-02-16T21:03:19.9966667' AS DateTime2), 0, CAST(N'2023-02-16T21:03:20.0000000' AS DateTime2), 0)
+GO
+INSERT [dbo].[Review] ([ReviewId], [Rating], [Message], [UserId], [SalesId], [ProductId], [IsApproved], [IsActive], [AddedBy], [AddedOn], [UpDatedBy], [UpdatedOn], [IsDeleted], [DeletedOn], [DeletedBy]) VALUES (2, CAST(4.00 AS Decimal(18, 2)), N'4', N'Bishal@gmail.com', 2, 1, 0, 1, 0, CAST(N'2023-02-16T21:08:06.0000000' AS DateTime2), 0, CAST(N'2023-02-16T21:08:06.0000000' AS DateTime2), 0, CAST(N'2023-02-16T21:08:06.0000000' AS DateTime2), 0)
+GO
+INSERT [dbo].[Review] ([ReviewId], [Rating], [Message], [UserId], [SalesId], [ProductId], [IsApproved], [IsActive], [AddedBy], [AddedOn], [UpDatedBy], [UpdatedOn], [IsDeleted], [DeletedOn], [DeletedBy]) VALUES (3, CAST(4.00 AS Decimal(18, 2)), N'4', N'Bishal@gmail.com', 3, 2, 0, 1, 0, CAST(N'2023-02-16T21:08:25.2666667' AS DateTime2), 0, CAST(N'2023-02-16T21:08:25.2666667' AS DateTime2), 0, CAST(N'2023-02-16T21:08:25.2666667' AS DateTime2), 0)
+GO
+INSERT [dbo].[Review] ([ReviewId], [Rating], [Message], [UserId], [SalesId], [ProductId], [IsApproved], [IsActive], [AddedBy], [AddedOn], [UpDatedBy], [UpdatedOn], [IsDeleted], [DeletedOn], [DeletedBy]) VALUES (4, CAST(4.00 AS Decimal(18, 2)), N'eee', N'Bishal@gmail.com', 4, 3, 0, 1, 0, CAST(N'2023-02-18T16:01:06.8966667' AS DateTime2), 0, CAST(N'2023-02-18T16:01:06.8966667' AS DateTime2), 0, CAST(N'2023-02-18T16:01:06.8966667' AS DateTime2), 0)
+GO
+INSERT [dbo].[Review] ([ReviewId], [Rating], [Message], [UserId], [SalesId], [ProductId], [IsApproved], [IsActive], [AddedBy], [AddedOn], [UpDatedBy], [UpdatedOn], [IsDeleted], [DeletedOn], [DeletedBy]) VALUES (5, CAST(4.00 AS Decimal(18, 2)), N'ee', N'Bishal@gmail.com', 5, 1, 0, 1, 0, CAST(N'2023-02-18T17:55:03.4933333' AS DateTime2), 0, CAST(N'2023-02-18T17:55:03.4933333' AS DateTime2), 0, CAST(N'2023-02-18T17:55:03.4933333' AS DateTime2), 0)
+GO
+SET IDENTITY_INSERT [dbo].[Review] OFF
+GO
+SET IDENTITY_INSERT [dbo].[SearchLog] ON 
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (2, N'e', N'Bishal@gmail.com', 1, CAST(N'2023-02-18T12:41:04.420' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (3, N'Tshirt', N'Bishal@gmail.com', 2, CAST(N'2023-02-18T12:42:35.260' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (4, N'Tshirt', N'a848be29-985d-44c8-847e-40b2752fb766', 2, CAST(N'2023-02-18T13:18:45.410' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (5, N'e', N'', 1, CAST(N'2023-02-18T14:10:04.367' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (6, N'e', N'a848be29-985d-44c8-847e-40b2752fb766', 1, CAST(N'2023-02-18T14:11:23.533' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (7, N'pant', N'a848be29-985d-44c8-847e-40b2752fb766', 3, CAST(N'2023-02-18T14:11:52.213' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (8, N'pant', N'a848be29-985d-44c8-847e-40b2752fb766', 3, CAST(N'2023-02-18T14:12:07.280' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (9, N'e', N'a848be29-985d-44c8-847e-40b2752fb766', 1, CAST(N'2023-02-18T14:16:42.727' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (10, N'pant', N'a848be29-985d-44c8-847e-40b2752fb766', 3, CAST(N'2023-02-18T14:22:10.827' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (23, N'ka', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T17:14:38.993' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (24, N'jutta', N'a848be29-985d-44c8-847e-40b2752fb766', 8, CAST(N'2023-02-18T17:15:54.003' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (25, N'kaiyo', N'a848be29-985d-44c8-847e-40b2752fb766', 7, CAST(N'2023-02-18T17:23:30.230' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (29, N'', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T17:59:57.200' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (30, N'lenga', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T18:00:35.847' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (33, N'', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T19:15:30.823' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (34, N'', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T19:26:34.107' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (35, N'', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T19:40:38.777' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (36, N'', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T19:45:23.613' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (37, N'', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T19:45:51.910' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (38, N'', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T19:46:37.740' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (39, N'', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T19:47:03.770' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (40, N'', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T19:48:17.713' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (41, N'', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T19:49:24.080' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (11, N'pant', N'a848be29-985d-44c8-847e-40b2752fb766', 3, CAST(N'2023-02-18T16:00:37.173' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (12, N'e', N'a848be29-985d-44c8-847e-40b2752fb766', 1, CAST(N'2023-02-18T16:22:57.087' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (26, N'', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T17:54:31.347' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (27, N'', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T17:54:47.947' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (28, N'', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T17:55:03.553' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (31, N'', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T18:01:50.273' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (32, N'lenga', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T18:02:17.553' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (13, N'tshirt', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T16:31:34.910' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (14, N'lenga', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T16:38:37.150' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (15, N'sari', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T16:38:44.377' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (16, N'lenga', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T16:39:53.670' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (17, N'sa', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T16:39:57.430' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (18, N'e', N'a848be29-985d-44c8-847e-40b2752fb766', 1, CAST(N'2023-02-18T16:42:03.730' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (19, N'pant', N'a848be29-985d-44c8-847e-40b2752fb766', 3, CAST(N'2023-02-18T16:44:13.170' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (20, N'Saadi', N'a848be29-985d-44c8-847e-40b2752fb766', 5, CAST(N'2023-02-18T16:44:17.780' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (21, N'lenga 12323', N'a848be29-985d-44c8-847e-40b2752fb766', 4, CAST(N'2023-02-18T16:44:21.587' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (22, N'leba', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T16:51:02.947' AS DateTime))
+GO
+INSERT [dbo].[SearchLog] ([Id], [Keyword], [UserId], [ProductId], [AddedOn]) VALUES (42, N'', N'a848be29-985d-44c8-847e-40b2752fb766', 0, CAST(N'2023-02-18T19:53:20.123' AS DateTime))
+GO
+SET IDENTITY_INSERT [dbo].[SearchLog] OFF
+GO
+SET IDENTITY_INSERT [dbo].[SpecialTags] ON 
+GO
+INSERT [dbo].[SpecialTags] ([Id], [Name], [IsActive], [IsDeleted]) VALUES (1, N'Bishal Gautam', 1, 0)
+GO
+INSERT [dbo].[SpecialTags] ([Id], [Name], [IsActive], [IsDeleted]) VALUES (2, N'as', 1, 0)
+GO
+SET IDENTITY_INSERT [dbo].[SpecialTags] OFF
+GO
+ALTER TABLE [dbo].[AspNetUsers] ADD  DEFAULT (N'') FOR [Discriminator]
+GO
+ALTER TABLE [dbo].[OrderDetails] ADD  DEFAULT ((0)) FOR [Quantity]
+GO
+ALTER TABLE [dbo].[OrderDetails] ADD  DEFAULT ('0001-01-01T00:00:00.0000000') FOR [TransactionDate]
+GO
+ALTER TABLE [dbo].[Orders] ADD  DEFAULT (N'') FOR [TotalPrice]
+GO
+ALTER TABLE [dbo].[Products] ADD  DEFAULT ((0)) FOR [IsActive]
+GO
+ALTER TABLE [dbo].[Products] ADD  DEFAULT ((0)) FOR [IsDeleted]
+GO
+ALTER TABLE [dbo].[ProductTypes] ADD  DEFAULT ((0)) FOR [IsActive]
+GO
+ALTER TABLE [dbo].[ProductTypes] ADD  DEFAULT ((0)) FOR [IsDeleted]
+GO
+ALTER TABLE [dbo].[SpecialTags] ADD  DEFAULT ((0)) FOR [IsActive]
+GO
+ALTER TABLE [dbo].[SpecialTags] ADD  DEFAULT ((0)) FOR [IsDeleted]
+GO
+ALTER TABLE [dbo].[AspNetRoleClaims]  WITH CHECK ADD  CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY([RoleId])
+REFERENCES [dbo].[AspNetRoles] ([Id])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[AspNetRoleClaims] CHECK CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId]
+GO
+ALTER TABLE [dbo].[AspNetUserClaims]  WITH CHECK ADD  CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY([UserId])
+REFERENCES [dbo].[AspNetUsers] ([Id])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[AspNetUserClaims] CHECK CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId]
+GO
+ALTER TABLE [dbo].[AspNetUserLogins]  WITH CHECK ADD  CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY([UserId])
+REFERENCES [dbo].[AspNetUsers] ([Id])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[AspNetUserLogins] CHECK CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId]
+GO
+ALTER TABLE [dbo].[AspNetUserRoles]  WITH CHECK ADD  CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY([RoleId])
+REFERENCES [dbo].[AspNetRoles] ([Id])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[AspNetUserRoles] CHECK CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId]
+GO
+ALTER TABLE [dbo].[AspNetUserRoles]  WITH CHECK ADD  CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY([UserId])
+REFERENCES [dbo].[AspNetUsers] ([Id])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[AspNetUserRoles] CHECK CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId]
+GO
+ALTER TABLE [dbo].[AspNetUserTokens]  WITH CHECK ADD  CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY([UserId])
+REFERENCES [dbo].[AspNetUsers] ([Id])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[AspNetUserTokens] CHECK CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId]
+GO
+ALTER TABLE [dbo].[OrderDetails]  WITH CHECK ADD  CONSTRAINT [FK_OrderDetails_Orders_OrderId] FOREIGN KEY([OrderId])
+REFERENCES [dbo].[Orders] ([Id])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[OrderDetails] CHECK CONSTRAINT [FK_OrderDetails_Orders_OrderId]
+GO
+ALTER TABLE [dbo].[OrderDetails]  WITH CHECK ADD  CONSTRAINT [FK_OrderDetails_Products_PorductId] FOREIGN KEY([PorductId])
+REFERENCES [dbo].[Products] ([Id])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[OrderDetails] CHECK CONSTRAINT [FK_OrderDetails_Products_PorductId]
+GO
+ALTER TABLE [dbo].[Products]  WITH CHECK ADD  CONSTRAINT [FK_Products_ProductTypes_ProductTypeId] FOREIGN KEY([ProductTypeId])
+REFERENCES [dbo].[ProductTypes] ([Id])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Products] CHECK CONSTRAINT [FK_Products_ProductTypes_ProductTypeId]
+GO
+ALTER TABLE [dbo].[Products]  WITH CHECK ADD  CONSTRAINT [FK_Products_SpecialTags_SpecialTagId] FOREIGN KEY([SpecialTagId])
+REFERENCES [dbo].[SpecialTags] ([Id])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Products] CHECK CONSTRAINT [FK_Products_SpecialTags_SpecialTagId]
+GO
